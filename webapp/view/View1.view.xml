@@ -1,0 +1,61 @@
+<mvc:View controllerName="nwc.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <Table id="ID_CUST" mode="SingleSelectLeft" selectionChange="onselect"
+		items="{
+			path: '/tabdata'
+		}">
+        <headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<ToolbarSpacer />
+                    <Button id="ID_DLT" press="onDelete" text="Delete" ></Button>
+                    <Button id="ID_ADD" press="onAdd" text="Add" ></Button>
+                    <Button id="ID_UPD" press="onEdit" text="Edit" ></Button>
+                    </content>
+                    </OverflowToolbar>
+                    </headerToolbar>
+        <columns>
+			<Column 
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Customer ID" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<Text text="City" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="Address" />
+			</Column>
+            <Column
+				hAlign="End">
+				<Text text="Region" />
+			</Column>
+            <Column
+				hAlign="End">
+				<Text text="Country" />
+			</Column>
+		</columns>
+        <items >
+			<ColumnListItem vAlign="Middle" >
+				<cells>
+                <Text text="{CustomerID}"/>
+                <Text text="{City}"/>
+                <Text text="{Address}"/>
+                <Text text="{Region}"/>
+                <Text text="{Country}"/>
+                </cells>
+                </ColumnListItem>
+                </items>
+        </Table>
+        </content>
+    </Page>
+</mvc:View>
